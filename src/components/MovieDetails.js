@@ -2,6 +2,7 @@ import { Component } from 'react';
 import axios from 'axios';
 import Youtube from 'react-youtube';
 import movieTrailer from 'movie-trailer';
+import Tally from './Tally.js';
 
 class MovieDetails extends Component {
   constructor() {
@@ -58,8 +59,8 @@ class MovieDetails extends Component {
       <div className="single-movie">
         <img src={Poster} />
         <div className="interactions">
-          <span class="material-icons-outlined">favorite_border</span>
-          <span class="material-icons-outlined" onClick={this.handleClick}>play_circle_outline</span>
+          <Tally />
+          <span className="material-icons-outlined" onClick={this.handleClick}>play_circle_outline</span>
         </div>
         {this.state.trailer !== "" &&
           <Youtube videoId={this.state.trailer} opts={opts}
@@ -79,4 +80,4 @@ class MovieDetails extends Component {
     )
   }
 }
-export default MovieDetails
+export default MovieDetails;

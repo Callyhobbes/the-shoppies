@@ -1,10 +1,10 @@
-# Getting Started with Create React App
+# The Shoppies
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is designed as part of Shopify's Web Developer Intern Challenge - Fall 2021
 
-## Available Scripts
+## The Challenge
 
-In the project directory, you can run:
+Design a webpage that can search OMDB for movies, and allow the user to save their favourite films they feel should be up for nomination. When they've selected 5 nominees they should be notified they're finished.
 
 ### `npm start`
 

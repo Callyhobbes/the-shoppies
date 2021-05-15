@@ -5,7 +5,7 @@ import Movie from './Movie.js';
 
 class Information extends Component {
   render() {
-    const { movies } = this.props;
+    const { movies, search } = this.props;
     return (
       <Fragment>
       { movies.length === 0  &&
@@ -21,6 +21,8 @@ class Information extends Component {
         
       {
         movies.length > 0 &&
+        <Fragment>
+        <h3>You searched for "{search}"</h3>
         <ul className="movie-list">
           {
             movies.map((movie, index) => {
@@ -35,6 +37,7 @@ class Information extends Component {
             })
           }
         </ul>
+        </Fragment>
       }
       </Fragment>
     )

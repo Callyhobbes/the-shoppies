@@ -4,12 +4,10 @@ import Favourite from './components/Favourite.js';
 import Information from './components/Information.js';
 import Cally from './components/Cally.js';
 import MovieDetails from './components/MovieDetails.js';
+import LikeCount from './components/LikeCount.js';
 
 import Logo from './assets/cal-logo.svg';
 import Search from './assets/search.svg';
-import movieIcon from './assets/movie.svg';
-import favouriteIcon from './assets/heart.svg';
-import info from './assets/info-white.svg';
 import axios from 'axios';
 import firebase from './components/firebase.js';
 import './styling/App.scss';
@@ -22,6 +20,7 @@ class App extends Component {
       search: '',
       movies: [],
     }
+    this.base = this.state;
   }
 
   handleChange = (e) => {
@@ -29,6 +28,10 @@ class App extends Component {
     this.setState({
       search: search,
     })
+  }
+
+  reset = () => {
+    this.setState(this.base)
   }
 
   handleSubmit = (e) => {
@@ -41,6 +44,7 @@ class App extends Component {
       responseType: 'json',
       params: {
         s: `${this.state.search}`,
+        type: "movie"
       }
     }).then((movies) => {
       this.setState({
@@ -70,22 +74,23 @@ class App extends Component {
             <ul>
               <li>
                 <NavLink to="/">
-                    <span class="material-icons-outlined">info</span>
+                    <span className="material-icons-outlined" onClick={this.reset}>info</span>
                 </NavLink>
               </li>
               <li>
                 <NavLink to="/cally">
-                    <span class="material-icons-outlined">movie</span>
+                    <span className="material-icons-outlined">movie</span>
                 </NavLink>
               </li>
               <li>
                 <NavLink to="/favourite">
-                    <span class="material-icons">favorite_border</span>
+                    <span className="material-icons">favorite_border</span>
+                    <LikeCount />
                 </NavLink>
               </li>
               <li>
                 <NavLink to="/">
-                    <span class="material-icons">replay</span>
+                    <span className="material-icons" onClick={this.reset}>replay</span>
                 </NavLink>
               </li>
             </ul>
@@ -93,7 +98,7 @@ class App extends Component {
           <div className="movie-options">
             <Route exact 
               path="/"  
-              render={() => <Information movies={this.state.movies} />}/>
+              render={() => <Information movies={this.state.movies} search={this.state.search}/>}/>
             <Route path="/movie/:movieID" component={MovieDetails} />
             <Route path="/cally" component={Cally} />
             <Route path="/favourite" component={Favourite} />

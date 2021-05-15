@@ -473,8 +473,50 @@ section {
   margin: 0 auto;
 }
 
-.single-movie span {
+.single-movie .interactions {
   color: #fff;
   font-size: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.single-movie .interactions span {
+  font-size: 4rem;
+  background-color: #b73a1c;
+  position: relative;
+  z-index: 5;
+  margin: 10px 20px;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.sidebar li {
+  position: relative;
+}
+
+.sidebar li .favourite {
+  position: absolute;
+  z-index: 100;
+  color: #fff;
+  background-color: #b73a1c;
+  font-size: 2.5rem;
+  width: 40px;
+  height: 40px;
+  top: -20px;
+  right: -20px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 /*# sourceMappingURL=App.css.map */
