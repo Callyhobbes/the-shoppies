@@ -358,6 +358,7 @@ section {
 .movie-options {
   margin: 60px auto 0px;
   min-height: calc(100vh - 60px);
+  max-width: 100vw;
 }
 
 .movie-list {
@@ -397,6 +398,7 @@ section {
   list-style: none;
   margin-bottom: 15px;
   margin-left: 20px;
+  line-height: 1.4;
   position: relative;
 }
 
@@ -432,11 +434,27 @@ section {
   border: 2px solid #b73a1c;
 }
 
-.instructions li img {
+.instructions li span {
+  font-size: 1.6rem;
   max-width: 15px;
   height: auto;
   position: relative;
+  z-index: 1000;
   bottom: -3px;
+  color: #fff;
+  margin: 0px 4px;
+}
+
+.instructions li span::after {
+  content: '';
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #b73a1c;
+  position: absolute;
+  z-index: -1;
+  top: -2px;
+  left: -1px;
 }
 
 .single-movie {
@@ -494,6 +512,78 @@ section {
   border-radius: 50%;
 }
 
+.shoppies {
+  margin-bottom: 70px;
+  counter-reset: item;
+}
+
+.shoppies li {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+}
+
+.shoppies li::after {
+  content: counter(item);
+  counter-increment: item;
+  color: #b73a1c;
+  position: absolute;
+  top: 10px;
+  left: 17px;
+  font-size: 2.5rem;
+}
+
+.shoppies li:first-of-type::after {
+  left: 20px;
+}
+
+.shoppies li::before {
+  content: "";
+  background-color: #fff;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px solid #b73a1c;
+  top: 0;
+  left: 0;
+}
+
+.shoppies p {
+  padding: 10px 0;
+  text-align: center;
+}
+
+.shoppies img {
+  height: 300px;
+  width: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+.shoppies button {
+  position: absolute;
+  color: #fff;
+  background-color: #b73a1c;
+  border: #fff 3px solid;
+  border-radius: 50%;
+  margin: 10px auto;
+  right: 0;
+  bottom: 30px;
+}
+
+.selected span {
+  color: #b73a1c;
+}
+
 .sidebar li {
   position: relative;
 }
@@ -518,5 +608,10 @@ section {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.single-movie .interactions .control {
+  color: #b73a1c;
+  background-color: #fff;
 }
 /*# sourceMappingURL=App.css.map */

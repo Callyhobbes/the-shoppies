@@ -50,6 +50,9 @@ class App extends Component {
       this.setState({
         movies: movies.data.Search,
       });
+      const text = document.getElementById('movie');
+      // remove the text input and not just setting state to ""
+      text.value = "";
     })
   }
 
@@ -58,9 +61,11 @@ class App extends Component {
       <Fragment>
         <BrowserRouter>
           <header>
-            <button>
-              <img className="logo" src={Logo} alt="Calvin Movie Logo"></img>
-            </button>
+            <NavLink to="/">
+              <button>
+                <img className="logo" src={Logo} alt="Calvin Movie Logo"></img>
+              </button>
+            </NavLink>
             <form action="" className="search-bar" onSubmit={this.handleSubmit}>
               <label htmlFor="movie">Movie title</label>
               <input type="text" id="movie" name="movie" onChange={this.handleChange} value={this.props.search} placeholder="Search for a movie"></input>
@@ -78,19 +83,19 @@ class App extends Component {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/cally">
-                    <span className="material-icons-outlined">movie</span>
+                <NavLink to="/cally" activeClassName="selected">
+                  <span className="material-icons-outlined">movie</span>
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/favourite">
-                    <span className="material-icons">favorite_border</span>
-                    <LikeCount />
+                <NavLink to="/favourite" activeClassName="selected">
+                  <span className="material-icons">favorite_border</span>
+                  <LikeCount />
                 </NavLink>
               </li>
               <li>
                 <NavLink to="/">
-                    <span className="material-icons" onClick={this.reset}>replay</span>
+                  <span className="material-icons">replay</span>
                 </NavLink>
               </li>
             </ul>

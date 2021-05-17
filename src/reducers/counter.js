@@ -1,9 +1,28 @@
-const counterReducer = (state = 0, action) => {
+const initialState = {
+  number: 0,
+  movie: [],
+}
+
+const counterReducer = (state = initialState, action) => {
   switch(action.type) {
     case 'INCREMENT':
-      return state + 1;
-    case 'DECREMENT':
-      return state - 1;
+      if (state.number < 5 && !state.movie.find(e => e === action.payload.insert)) {
+        state = {
+          ...state,
+          number: state.number + action.payload.add,
+          movie: [...state.movie, action.payload.insert]
+        };
+        return state;
+      } else {
+        return state;
+      };
+    case 'REMOVE':
+        state = {
+          ...state,
+          number: state.number - action.payload.remove,
+          movie: state.movie.filter(index => index !== action.payload.selected)
+        };
+      return state;
     default:
       return state;
   }

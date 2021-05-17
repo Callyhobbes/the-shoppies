@@ -1,9 +1,6 @@
 import { Component } from 'react';
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import noPoster from '../assets/no-poster.png';
-import infoIcon from '../assets/info.svg';
-import like from '../assets/heart-red.svg';
-import MovieDetails from './MovieDetails.js';
 
 class Movie extends Component {
   constructor() {

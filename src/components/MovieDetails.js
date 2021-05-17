@@ -44,7 +44,7 @@ class MovieDetails extends Component {
 
 
   render() {
-    const { Poster, Title, Year, Plot, Director, Actors } = this.state.movie;
+    const { Poster, Title, Year, Plot, Director, Actors, imdbID } = this.state.movie;
 
     const opts = {
       height: "300",
@@ -59,8 +59,11 @@ class MovieDetails extends Component {
       <div className="single-movie">
         <img src={Poster} />
         <div className="interactions">
-          <Tally />
-          <span className="material-icons-outlined" onClick={this.handleClick}>play_circle_outline</span>
+          <Tally info={this.state.movie}/>
+          <span className="material-icons" onClick={this.handleClick}>play_arrow</span>
+          <a href={`https://www.imdb.com/title/${imdbID}`}>
+            <span className="material-icons-outlined" onClick={this.handleClick}>more_horiz</span>
+          </a>
         </div>
         {this.state.trailer !== "" &&
           <Youtube videoId={this.state.trailer} opts={opts}

@@ -16,3 +16,12 @@
     align-items: center;
   }
 }
+
+.single-movie {
+  .interactions {
+    .control {
+      color: $red;
+      background-color: $white;
+    }
+  }
+}

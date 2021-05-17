@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 
 function LikeCount() {
-  const counter = useSelector(state => state.counter);
+  const counter = useSelector(state => state.counter.number);
   return (
     <Fragment>
       {counter > 0 &&
