@@ -19,6 +19,7 @@ class App extends Component {
     this.state = {
       search: '',
       movies: [],
+      hasError: false
     }
     this.base = this.state;
   }
@@ -53,6 +54,8 @@ class App extends Component {
       const text = document.getElementById('movie');
       // remove the text input and not just setting state to ""
       text.value = "";
+    }).catch((error) => {
+      console.log(error);
     })
   }
 

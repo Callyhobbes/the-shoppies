@@ -3,6 +3,7 @@ import axios from 'axios';
 import Youtube from 'react-youtube';
 import movieTrailer from 'movie-trailer';
 import Tally from './Tally.js';
+import noPoster from '../assets/no-poster.png';
 
 class MovieDetails extends Component {
   constructor() {
@@ -57,7 +58,7 @@ class MovieDetails extends Component {
 
     return (
       <div className="single-movie">
-        <img src={Poster} />
+        <img src={Poster === "N/A" ? noPoster : Poster} alt={Title} />
         <div className="interactions">
           <Tally info={this.state.movie}/>
           <span className="material-icons" onClick={this.handleClick}>play_arrow</span>
