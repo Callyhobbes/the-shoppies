@@ -1,19 +1,24 @@
 const initialState = {
   number: 0,
   movie: [],
-}
+  title: "" 
+};
 
 const counterReducer = (state = initialState, action) => {
   switch(action.type) {
     case 'INCREMENT':
-      if (state.number < 5 && !state.movie.find(e => e === action.payload.insert)) {
+      // && !state.movie.includes(action.payload.insert)
+      if (state.number < 5 && !state.title.includes(action.payload.title)) {
         state = {
           ...state,
           number: state.number + action.payload.add,
-          movie: [...state.movie, action.payload.insert]
+          movie: [...state.movie, action.payload.insert],
+          title: [...state.title, action.payload.title]
         };
+
         return state;
       } else {
+        console.log("else");
         return state;
       };
     case 'REMOVE':

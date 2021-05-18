@@ -3,7 +3,9 @@ export const increment = (e) => {
     type: 'INCREMENT',
     payload: {
       add: 1,
-      insert: e
+      insert: e,
+      title: e.Title,
+      year: e.Year
     }
   }
 };

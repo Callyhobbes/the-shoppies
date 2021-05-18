@@ -9,7 +9,6 @@ import LikeCount from './components/LikeCount.js';
 import Logo from './assets/cal-logo.svg';
 import Search from './assets/search.svg';
 import axios from 'axios';
-import firebase from './components/firebase.js';
 import './styling/App.scss';
 
 class App extends Component {

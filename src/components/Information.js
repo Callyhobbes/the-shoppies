@@ -14,7 +14,6 @@ class Information extends Component {
   }
 
   pageOutput = (movies, search) => {
-    console.log(search);
     if (movies === undefined) {
       return <Fragment>
           <h3>An error has occured during your search. Please try searching again.</h3>
