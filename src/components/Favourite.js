@@ -22,7 +22,7 @@ function Favourite() {
                   return (
                     <li key={index}>
                       <Link to={{
-                        pathname: `/movie/${movie.imdbID}`,
+                        pathname: `/the-shoppies/movie/${movie.imdbID}`,
                         state: { ID: `${movie.imdbID}` }
                       }}>
                         <img src={movie.Poster} alt={movie.Title} />

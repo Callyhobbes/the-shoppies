@@ -21,7 +21,7 @@ class Movie extends Component {
     return (
       <li>
         <Link to={{
-          pathname: `/movie/${IMDB}`,
+          pathname: `/the-shoppies/movie/${IMDB}`,
           state: { ID: `${IMDB}` }
         }}>
           <img src={poster === "N/A" ? noPoster : poster} alt={title} />
