@@ -1,5 +1,5 @@
 import { Component, Fragment } from 'react';
-import { BrowserRouter, Route, NavLink } from "react-router-dom";
+import { BrowserRouter, Route, NavLink, Redirect } from "react-router-dom";
 import Favourite from './components/Favourite.js';
 import Information from './components/Information.js';
 import Cally from './components/Cally.js';
@@ -18,7 +18,7 @@ class App extends Component {
     this.state = {
       search: '',
       movies: [],
-      hasError: false
+      redirect: false,
     }
     this.base = this.state;
   }
@@ -49,6 +49,7 @@ class App extends Component {
     }).then((movies) => {
       this.setState({
         movies: movies.data.Search,
+        redirect: true
       });
       const text = document.getElementById('movie');
       // remove the text input and not just setting state to ""
@@ -56,6 +57,10 @@ class App extends Component {
     }).catch((error) => {
       console.log(error);
     })
+  }
+
+  redirect = () => {
+    this.setState({redirect: false})
   }
 
   render() {
@@ -85,12 +90,12 @@ class App extends Component {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/cally" activeClassName="selected">
+                  <NavLink to="/cally" activeClassName="selected" onClick={this.redirect}>
                   <span className="material-icons-outlined">movie</span>
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/favourite" activeClassName="selected">
+                <NavLink to="/favourite" activeClassName="selected" onClick={this.redirect}>
                   <span className="material-icons">favorite_border</span>
                   <LikeCount />
                 </NavLink>
@@ -106,9 +111,9 @@ class App extends Component {
             <Route exact 
               path="/"  
               render={() => <Information movies={this.state.movies} search={this.state.search}/>}/>
-            <Route path="/movie/:movieID" component={MovieDetails} />
-            <Route path="/cally" component={Cally} />
-            <Route path="/favourite" component={Favourite} />
+              <Route path="/movie/:movieID" component={MovieDetails} />
+              {this.state.redirect === true ? <Redirect to="/" /> : <Route path="/cally" component={Cally} />}
+              {this.state.redirect === true ? <Redirect to="/" /> : <Route path="/favourite" component={Favourite} />}
           </div>
         </section>
         </BrowserRouter>

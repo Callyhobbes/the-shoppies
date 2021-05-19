@@ -11,24 +11,30 @@ function Favourite() {
   return (
     <div className="shoppies-list">
       <h3>Your Shoppies</h3>
-      <ul>
+
       {
-        likedMovies.map((movie, index) => {
-          return (
-            <li key={index}>
-              <Link to={{
-                pathname: `/movie/${movie.imdbID}`,
-                state: { ID: `${movie.imdbID}` }
-              }}>
-                <img src={movie.Poster} alt={movie.Title}/>
-              </Link>
-              <p>{`${movie.Title} (${movie.Year})`}</p>
-              <button onClick={() => dispatch(deleteItem({movie}))}><span className="material-icons-outlined">close</span></button>
-            </li>
-          )
-        })
+        likedMovies.length === 0 
+          ? <p>No movies <span className="material-icons-outlined">star_border</span> yet.</p>
+          : <ul>
+            {
+              likedMovies.map((movie, index) => {
+                return (
+                  <li key={index}>
+                    <Link to={{
+                      pathname: `/movie/${movie.imdbID}`,
+                      state: { ID: `${movie.imdbID}` }
+                    }}>
+                      <img src={movie.Poster} alt={movie.Title} />
+                    </Link>
+                    <p>{`${movie.Title} (${movie.Year})`}</p>
+                    <button onClick={() => dispatch(deleteItem({ movie }))}><span className="material-icons-outlined">close</span></button>
+                  </li>
+                )
+              })
+            }
+          </ul>
       }
-      </ul>
+      
     </div>
   )
 }

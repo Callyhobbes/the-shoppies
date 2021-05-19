@@ -61,9 +61,11 @@ class MovieDetails extends Component {
         <img src={Poster === "N/A" ? noPoster : Poster} alt={Title} />
         <div className="interactions">
           <Tally info={this.state.movie}/>
-          <span className="material-icons" onClick={this.handleClick}>play_arrow</span>
+          <button>
+            <span className="material-icons" onClick={this.handleClick}>play_arrow</span>
+          </button>
           <a href={`https://www.imdb.com/title/${imdbID}`}>
-            <span className="material-icons-outlined" onClick={this.handleClick}>more_horiz</span>
+            <span className="material-icons-outlined">more_horiz</span>
           </a>
         </div>
         {this.state.trailer !== "" &&

@@ -496,6 +496,10 @@ section {
           justify-content: center;
 }
 
+.single-movie .interactions a {
+  color: #fff;
+}
+
 .single-movie .interactions span {
   font-size: 4rem;
   background-color: #b73a1c;
@@ -504,14 +508,15 @@ section {
   margin: 10px 20px;
   padding: 10px;
   border-radius: 50%;
+  border: 3px solid #fff;
 }
 
-.shoppies {
+.shoppies-list {
   margin-bottom: 70px;
   counter-reset: item;
 }
 
-.shoppies li {
+.shoppies-list li {
   list-style: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -523,38 +528,29 @@ section {
   position: relative;
 }
 
-.shoppies li::after {
+.shoppies-list li::after {
   content: counter(item);
   counter-increment: item;
   color: #b73a1c;
   position: absolute;
   top: 10px;
   left: 17px;
-  font-size: 2.5rem;
+  font-size: 6rem;
+  text-shadow: 2px 2px 4px #1a1a1a;
 }
 
-.shoppies li:first-of-type::after {
-  left: 20px;
-}
-
-.shoppies li::before {
-  content: "";
-  background-color: #fff;
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: 3px solid #b73a1c;
-  top: 0;
-  left: 0;
-}
-
-.shoppies p {
+.shoppies-list p {
   padding: 10px 0;
   text-align: center;
+  max-width: 200px;
 }
 
-.shoppies img {
+.shoppies-list p span {
+  position: relative;
+  top: 5px;
+}
+
+.shoppies-list img {
   height: 300px;
   width: 200px;
   -o-object-fit: cover;
@@ -563,15 +559,12 @@ section {
   padding: 10px 0;
 }
 
-.shoppies button {
-  position: absolute;
+.shoppies-list button {
   color: #fff;
   background-color: #b73a1c;
   border: #fff 3px solid;
   border-radius: 50%;
-  margin: 10px auto;
-  right: 0;
-  bottom: 30px;
+  margin: 0px auto 10px;
 }
 
 .sidebar li {
@@ -603,5 +596,6 @@ section {
 .single-movie .interactions .control {
   color: #b73a1c;
   background-color: #fff;
+  border: 3px solid #b73a1c;
 }
 /*# sourceMappingURL=App.css.map */

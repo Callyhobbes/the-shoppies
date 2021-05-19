@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import { Component, Fragment } from 'react';
 import { Link } from "react-router-dom";
 import firebase from './firebase.js';
 import noPoster from '../assets/no-poster.png';
@@ -45,7 +45,7 @@ class Cally extends Component {
   render() {
     console.log(this.state.cally);
     return (
-      <div>
+      <Fragment>
         <h3>Cally's Picks</h3>
         <ul className="shoppies-list">
           {this.state.cally.map((film, key) => {
@@ -62,7 +62,7 @@ class Cally extends Component {
             )
           })}
         </ul>
-      </div>
+      </Fragment>
     )
   }
 }

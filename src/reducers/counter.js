@@ -22,10 +22,12 @@ const counterReducer = (state = initialState, action) => {
         return state;
       };
     case 'REMOVE':
+      console.log(action.payload.selected.Title);
         state = {
           ...state,
           number: state.number - action.payload.remove,
-          movie: state.movie.filter(index => index !== action.payload.selected)
+          movie: state.movie.filter(index => index !== action.payload.selected),
+          title: state.title.filter(index => index !== action.payload.selected.Title)
         };
       return state;
     default:

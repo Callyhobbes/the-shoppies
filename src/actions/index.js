@@ -15,7 +15,7 @@ export const deleteItem = (index) => {
     type: 'REMOVE',
     payload: {
       remove: 1,
-      selected: index.movie
+      selected: index.movie,
   }
   }
 };

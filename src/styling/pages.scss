@@ -96,6 +96,14 @@
     font-size: 4rem;
     display: flex;
     justify-content: center;
+    button {
+      width: auto;
+      height: auto;
+      color: $white;
+    }
+    a {
+      color: $white;
+    }
     span {
       font-size: 4rem;
       background-color: $red;
@@ -104,6 +112,7 @@
       margin: 10px 20px;
       padding: 10px;
       border-radius: 50%;
+      border: 3px solid $white;
     }
   }
 }
@@ -125,26 +134,18 @@
       position: absolute;
       top: 10px;
       left: 17px;
-      font-size: 2.5rem;
-    }
-    &:first-of-type::after {
-      left: 20px;
-    }
-    &::before {
-      content: "";
-      background-color: $white;
-      position: absolute;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      border: 3px solid $red;
-      top: 0;
-      left: 0;
+      font-size: 6rem;
+      text-shadow: 2px 2px 4px $black;
     }
   }
   p {
     padding: 10px 0;
     text-align: center;
+    max-width: 200px;
+    span {
+      position: relative;
+      top: 5px;
+    }
   }
   img {
     height: 300px;
@@ -154,13 +155,11 @@
     padding: 10px 0;
   }
   button {
-    position: absolute;
+    // position: absolute;
     color: $white;
     background-color: $red;
     border: $white 3px solid;
     border-radius: 50%;
-    margin: 10px auto;
-    right: 0;
-    bottom: 30px;
+    margin: 0px auto 10px;
   }
 }
