@@ -10,7 +10,8 @@ class MovieDetails extends Component {
     super();
     this.state = {
       movie: {},
-      trailer: ""
+      trailer: "",
+      showModal: false
     }
   }
 
@@ -38,16 +39,34 @@ class MovieDetails extends Component {
         // cut after "v=" thus at point 3 
         let searchString = url.search.slice(3);
         this.setState({
-          trailer: searchString
+          trailer: searchString,
+          showModal: true
         })
       })
   };
+
+  closeModal = () => {
+    this.setState({showModal: false})
+  }
+
+  windowView = () => {
+    if (window.innerWidth < 500) {
+      console.log(window.innerWidth);
+      return 300;
+    } else if (window.innerWidth < 1000){
+      console.log(window.innerWidth);
+      return 600;
+    } else {
+      console.log(window.innerWidth);
+      return 800;
+    }
+  }
   
+  // `${this.windowView()}`
   render() {
     const { Poster, Title, Year, Plot, Director, Actors, imdbID } = this.state.movie;
 
     const opts = {
-      width: "100%",
       playerVars: {
         // https://developers.google.com/youtube/player_parameters
         autoplay: 1,
@@ -55,8 +74,8 @@ class MovieDetails extends Component {
     };
 
     return (
-      <div className={`single-movie ${window.innerWidth > 950 ? "film-contain" : ""}`} >
-        <div className="desktop-left">
+      <div className={`single-movie ${window.innerWidth > 950 ? "film-contain" : ""}`}>
+        <div className={`desktop-left ${this.state.showModal ? " blurBack" : ""}`}>
           <div className="movie-poster">
             <img src={Poster === "N/A" ? noPoster : Poster} alt={Title} />
           </div>
@@ -70,12 +89,19 @@ class MovieDetails extends Component {
             </a>
           </div>
         </div>
-        {this.state.trailer !== "" &&
-          <Youtube 
+        {this.state.showModal ?
+          <div className='highlight'>
+            <Youtube 
             videoId={this.state.trailer} 
             opts={opts}
-        />}
-        <div className="movie-content">
+            containerClassName={"overlay"}
+            ClassName={"test"}
+          />
+          <button className="trailer">
+            <span className="material-icons-outlined" onClick={this.closeModal}>close</span>
+          </button>
+          </div>
+          : <div className={`movie-content ${this.state.showModal ? " blurBack" : ""}`}>
           <h3>{Title}</h3>
           <p><strong>Summary</strong></p>
           <p>{Plot}</p>
@@ -86,6 +112,7 @@ class MovieDetails extends Component {
           <p><strong>Release</strong></p>
           <p>{Year}</p>
         </div>
+        }
       </div>
     )
   }

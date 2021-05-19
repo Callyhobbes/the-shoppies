@@ -5,6 +5,7 @@ import Information from './components/Information.js';
 import Cally from './components/Cally.js';
 import MovieDetails from './components/MovieDetails.js';
 import LikeCount from './components/LikeCount.js';
+import Intro from './assets/cal-stroke.svg';
 
 import Logo from './assets/cal-logo.svg';
 import Search from './assets/search.svg';
@@ -16,11 +17,13 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      opening: true,
       search: '',
       movies: [],
       redirect: false,
     }
-    this.base = this.state;
+    // trying to find out to use this with only three state and not all
+    // this.base = this.state;
   }
 
   handleChange = (e) => {
@@ -31,7 +34,11 @@ class App extends Component {
   }
 
   reset = () => {
-    this.setState(this.base)
+    this.setState({
+      search: '',
+      movies: [],
+      redirect: false
+    })
   }
 
   handleSubmit = (e) => {
@@ -63,10 +70,22 @@ class App extends Component {
     this.setState({redirect: false})
   }
 
+  removeIntro = () => {
+    this.setState({opening: !this.state.opening})
+  }
+
   render() {
     return (
       <Fragment>
-        <BrowserRouter>
+        {this.state.opening &&
+          <div className="opening" onClick={this.removeIntro}>
+            <img src={Intro} alt="shoppies logo" />
+            <h2>The Shoppies</h2>
+          </div>
+        }
+
+        {!this.state.opening &&
+          <BrowserRouter>
           <header>
             <NavLink to="/">
               <button>
@@ -81,42 +100,43 @@ class App extends Component {
               </button>
             </form>
           </header>
-        <section>
-          <nav className="sidebar">
-            <ul>
-              <li>
-                <NavLink to="/">
+          <section>
+            <nav className="sidebar">
+              <ul>
+                <li>
+                  <NavLink to="/">
                     <span className="material-icons-outlined" onClick={this.reset}>info</span>
-                </NavLink>
-              </li>
-              <li>
+                  </NavLink>
+                </li>
+                <li>
                   <NavLink to="/cally" activeClassName="selected" onClick={this.redirect}>
-                  <span className="material-icons-outlined">movie</span>
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/favourite" activeClassName="selected" onClick={this.redirect}>
-                  <span className="material-icons">favorite_border</span>
-                  <LikeCount />
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/">
-                  <span className="material-icons">replay</span>
-                </NavLink>
-              </li>
-            </ul>
-          </nav>
-          <div className="movie-options">
-            <Route exact 
-              path="/"  
-              render={() => <Information movies={this.state.movies} search={this.state.search}/>}/>
+                    <span className="material-icons-outlined">movie</span>
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/favourite" activeClassName="selected" onClick={this.redirect}>
+                    <span className="material-icons">favorite_border</span>
+                    <LikeCount />
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/">
+                    <span className="material-icons">replay</span>
+                  </NavLink>
+                </li>
+              </ul>
+            </nav>
+            <div className="movie-options">
+              <Route exact
+                path="/"
+                render={() => <Information movies={this.state.movies} search={this.state.search} />} />
               <Route path="/movie/:movieID" component={MovieDetails} />
               {this.state.redirect === true ? <Redirect to="/" /> : <Route path="/cally" component={Cally} />}
               {this.state.redirect === true ? <Redirect to="/" /> : <Route path="/favourite" component={Favourite} />}
-          </div>
-        </section>
+            </div>
+          </section>
         </BrowserRouter>
+        }
       </Fragment>
     )
   }

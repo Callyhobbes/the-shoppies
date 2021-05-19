@@ -5,6 +5,12 @@
   .shoppies-list {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .opening {
+    h2 {
+      font-size: 4rem;
+    }
+  }
 }
 
 @media (min-width: 800px) {
@@ -22,6 +28,9 @@
         max-width: 225px;
       }
     }
+  }
+  .opening {
+    font-size: 5rem;
   }
 }
 

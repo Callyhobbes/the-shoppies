@@ -24,7 +24,8 @@ label {
 }
 
 h2 {
-  @include fontStyling(2rem, 600);
+  @include fontStyling(3rem, 600);
+  letter-spacing: 5px;
 }
 
 h3 {
@@ -108,5 +109,42 @@ section {
 .selected {
   span {
     color: $red;
+  }
+}
+
+.opening {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: $red;
+  overflow: hidden;
+  position: relative;
+  flex-direction: column;
+  cursor: pointer;
+  img {
+    width: 60%;
+    padding: 20px;
+    max-width: 450px;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    width: 400%;
+    height: 100%;
+    z-index: 1000;
+    background: linear-gradient(to right, transparent, $red, $red);
+    z-index: 6000;
+    animation: unveil 2s linear forwards;
+  }
+}
+
+@keyframes unveil {
+  0% {
+    right: 0;
+  }
+  100% {
+    right: -400%;
   }
 }

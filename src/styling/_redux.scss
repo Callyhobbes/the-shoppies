@@ -27,6 +27,10 @@
   }
 }
 
-.shoppies-list.only-text {
+.only-text {
   grid-template-columns: repeat(1, 1fr);
+  span {
+    position: relative;
+    top: 5px;
+  }
 }

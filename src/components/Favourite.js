@@ -11,12 +11,12 @@ function Favourite() {
   return (
     <Fragment>
       <h3>Your Shoppies</h3>
-      <div className={`shoppies-list ${likedMovies.length < 1 ? "only-text" : ""}`}>
+      <div className={`${likedMovies.length < 1 ? "only-text" : null}`}>
 
         {
           likedMovies.length === 0
             ? <p>No movies <span className="material-icons-outlined">star_border</span> yet.</p>
-            : <ul>
+            : <ul className="shoppies-list">
               {
                 likedMovies.map((movie, index) => {
                   return (
