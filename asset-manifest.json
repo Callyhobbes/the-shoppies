@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/the-shoppies/static/css/main.5bd1978c.chunk.css",
+    "main.js": "/the-shoppies/static/js/main.fc541e50.chunk.js",
+    "main.js.map": "/the-shoppies/static/js/main.fc541e50.chunk.js.map",
+    "runtime-main.js": "/the-shoppies/static/js/runtime-main.bf324c16.js",
+    "runtime-main.js.map": "/the-shoppies/static/js/runtime-main.bf324c16.js.map",
+    "static/js/2.fbc8cfda.chunk.js": "/the-shoppies/static/js/2.fbc8cfda.chunk.js",
+    "static/js/2.fbc8cfda.chunk.js.map": "/the-shoppies/static/js/2.fbc8cfda.chunk.js.map",
+    "static/js/3.e856d873.chunk.js": "/the-shoppies/static/js/3.e856d873.chunk.js",
+    "static/js/3.e856d873.chunk.js.map": "/the-shoppies/static/js/3.e856d873.chunk.js.map",
+    "index.html": "/the-shoppies/index.html",
+    "static/css/main.5bd1978c.chunk.css.map": "/the-shoppies/static/css/main.5bd1978c.chunk.css.map",
+    "static/js/2.fbc8cfda.chunk.js.LICENSE.txt": "/the-shoppies/static/js/2.fbc8cfda.chunk.js.LICENSE.txt",
+    "static/media/cal-logo.7961e720.svg": "/the-shoppies/static/media/cal-logo.7961e720.svg",
+    "static/media/cal-stroke.a4087cf3.svg": "/the-shoppies/static/media/cal-stroke.a4087cf3.svg",
+    "static/media/keanu-min.83634a9d.jpg": "/the-shoppies/static/media/keanu-min.83634a9d.jpg",
+    "static/media/no-poster.8ea4435b.png": "/the-shoppies/static/media/no-poster.8ea4435b.png",
+    "static/media/search.8900d0c8.svg": "/the-shoppies/static/media/search.8900d0c8.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bf324c16.js",
+    "static/js/2.fbc8cfda.chunk.js",
+    "static/css/main.5bd1978c.chunk.css",
+    "static/js/main.fc541e50.chunk.js"
+  ]
+}
