@@ -52,7 +52,7 @@ class Cally extends Component {
             return (
               <li key={key}>
                 <Link to={{
-                  pathname: `the-shoppies/movie/${film.name.imdbID}`,
+                  pathname: `/the-shoppies/movie/${film.name.imdbID}`,
                   state: { ID: `${film.name.imdbID}` }
                 }}>
                 <img src={film.name.Poster === "N/A" ? noPoster : film.name.Poster} alt={film.name.Title} />
