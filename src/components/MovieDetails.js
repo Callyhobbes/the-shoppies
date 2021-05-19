@@ -42,13 +42,11 @@ class MovieDetails extends Component {
         })
       })
   };
-
-
+  
   render() {
     const { Poster, Title, Year, Plot, Director, Actors, imdbID } = this.state.movie;
 
     const opts = {
-      height: "300",
       width: "100%",
       playerVars: {
         // https://developers.google.com/youtube/player_parameters
@@ -57,19 +55,25 @@ class MovieDetails extends Component {
     };
 
     return (
-      <div className="single-movie">
-        <img src={Poster === "N/A" ? noPoster : Poster} alt={Title} />
-        <div className="interactions">
-          <Tally info={this.state.movie}/>
-          <button>
-            <span className="material-icons" onClick={this.handleClick}>play_arrow</span>
-          </button>
-          <a href={`https://www.imdb.com/title/${imdbID}`}>
-            <span className="material-icons-outlined">more_horiz</span>
-          </a>
+      <div className={`single-movie ${window.innerWidth > 950 ? "film-contain" : ""}`} >
+        <div className="desktop-left">
+          <div className="movie-poster">
+            <img src={Poster === "N/A" ? noPoster : Poster} alt={Title} />
+          </div>
+          <div className="interactions">
+            <Tally info={this.state.movie} />
+            <button>
+              <span className="material-icons" onClick={this.handleClick}>play_arrow</span>
+            </button>
+            <a href={`https://www.imdb.com/title/${imdbID}`}>
+              <span className="material-icons-outlined">more_horiz</span>
+            </a>
+          </div>
         </div>
         {this.state.trailer !== "" &&
-          <Youtube videoId={this.state.trailer} opts={opts}
+          <Youtube 
+            videoId={this.state.trailer} 
+            opts={opts}
         />}
         <div className="movie-content">
           <h3>{Title}</h3>

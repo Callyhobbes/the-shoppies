@@ -1,5 +1,6 @@
 .movie-list {
-  margin-top: 20px;
+  margin-top: 30px;
+  margin-bottom: 80px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 20px;
@@ -18,7 +19,7 @@
 
 // instruction area
 .instructions {
-  margin: 0 30px;
+  margin: 0 30px 70px;
   counter-reset: section;
   li {
     list-style: none;
@@ -27,7 +28,7 @@
     line-height: 1.4;
     position: relative;
     &:first-of-type {
-      padding-top: 10px;
+      margin-top: 10px;
     }
     &::before {
       content: counter(section);
@@ -36,13 +37,14 @@
       left: -24px;
       top: 50%;
       transform: translateY(-50%);
+      z-index: 5;
     }
     &:first-of-type::before {
       left: -22px;
     }
     &::after {
       content: "";
-      background-color: transparent;
+      background-color: $red;
       position: absolute;
       left: -29px;
       top: 50%;
@@ -50,14 +52,14 @@
       width: 20px;
       height: 20px;
       border-radius: 50%;
-      border: 2px solid $red;
+      z-index: 1;
     }
     span {
       font-size: 1.6rem;
       border-radius: 50%;
       height: auto;
       position: relative;
-      z-index: 1000;
+      z-index: 20;
       bottom: -3px;
       color: $white;
       background-color: $red;
@@ -73,6 +75,14 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 70px;
+  .movie-poster {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    img {
+      max-width: 350px;
+    }
+  }
   p {
     margin-bottom: 10px;
     &:nth-of-type(2n) {
@@ -117,15 +127,21 @@
   }
 }
 
+.film-contain {
+  max-width: 1000px;
+}
+
 // shoppies & cally
 
 .shoppies-list {
   margin-bottom: 70px;
   counter-reset: item;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 20px;
+  text-align: center;
   li {
     list-style: none;
-    display: flex;
-    flex-direction: column;
     position: relative;
     &::after {
       content: counter(item);
@@ -139,9 +155,8 @@
     }
   }
   p {
-    padding: 10px 0;
-    text-align: center;
-    max-width: 200px;
+    padding-top: 15px;
+    position: relative;
     span {
       position: relative;
       top: 5px;
@@ -162,4 +177,8 @@
     border-radius: 50%;
     margin: 0px auto 10px;
   }
+}
+
+.shoppies-list li p {
+  max-width: 200px;
 }

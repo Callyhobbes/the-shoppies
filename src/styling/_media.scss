@@ -1,0 +1,74 @@
+@media (min-width: 600px) {
+  .movie-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .shoppies-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 800px) {
+  .movie-list li img{
+    height: 300px;
+    width: 200px;
+  }
+  .shoppies-list {
+    li {
+      img {
+        height: 350px;
+        width: 225px;
+      }
+      p {
+        max-width: 225px;
+      }
+    }
+  }
+}
+
+@media (min-width: 900px) {
+  .single-movie {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    justify-content: center;
+    .movie-content {
+      padding: 0 20px;
+    }
+  }
+}
+
+
+@media (min-width: 1000px) {
+  .movie-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .shoppies-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .single-movie .movie-poster img {
+    width: 100%;
+  }
+  .single-movie .movie-content {
+    padding: 0 30px;
+  }
+}
+
+@media (min-width: 1200px) {
+  h3 {
+    font-size: 4rem;
+  }
+  p, .instructions li {
+    font-size: 1.8rem;
+  }
+  .movie-list {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .shoppies-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1400px) {
+  .shoppies-list {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
