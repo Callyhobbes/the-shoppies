@@ -87,7 +87,7 @@ class App extends Component {
         {!this.state.opening &&
           <BrowserRouter>
           <header>
-            <NavLink to="/">
+            <NavLink to="/the-shoppies">
               <button>
                 <img className="logo" src={Logo} alt="Calvin Movie Logo"></img>
               </button>
@@ -104,23 +104,23 @@ class App extends Component {
             <nav className="sidebar">
               <ul>
                 <li>
-                  <NavLink to="/">
+                  <NavLink to="/the-shoppies">
                     <span className="material-icons-outlined" onClick={this.reset}>info</span>
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/cally" activeClassName="selected" onClick={this.redirect}>
+                  <NavLink to="/the-shoppies/cally" activeClassName="selected" onClick={this.redirect}>
                     <span className="material-icons-outlined">movie</span>
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/favourite" activeClassName="selected" onClick={this.redirect}>
+                  <NavLink to="/the-shoppies/favourite" activeClassName="selected" onClick={this.redirect}>
                     <span className="material-icons">favorite_border</span>
                     <LikeCount />
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/">
+                  <NavLink to="/the-shoppies">
                     <span className="material-icons">replay</span>
                   </NavLink>
                 </li>
@@ -128,11 +128,11 @@ class App extends Component {
             </nav>
             <div className="movie-options">
               <Route exact
-                path="/"
+                path="/the-shoppies"
                 render={() => <Information movies={this.state.movies} search={this.state.search} />} />
-              <Route path="/movie/:movieID" component={MovieDetails} />
-              {this.state.redirect === true ? <Redirect to="/" /> : <Route path="/cally" component={Cally} />}
-              {this.state.redirect === true ? <Redirect to="/" /> : <Route path="/favourite" component={Favourite} />}
+              <Route path="/the-shoppies/movie/:movieID" component={MovieDetails} />
+              {this.state.redirect === true ? <Redirect to="/the-shoppies" /> : <Route path="/the-shoppies/cally" component={Cally} />}
+              {this.state.redirect === true ? <Redirect to="/the-shoppies" /> : <Route path="/the-shoppies/favourite" component={Favourite} />}
             </div>
           </section>
         </BrowserRouter>
