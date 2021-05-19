@@ -18,7 +18,7 @@ class MovieDetails extends Component {
   componentDidMount() {
     const apiKey = '1c039e11'
     axios({
-      url: `http://www.omdbapi.com/?apikey=${apiKey}`,
+      url: `https://www.omdbapi.com/?apikey=${apiKey}`,
       method: 'GET',
       responseType: 'json',
       params: {
