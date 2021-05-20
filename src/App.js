@@ -6,6 +6,7 @@ import Cally from './components/Cally.js';
 import MovieDetails from './components/MovieDetails.js';
 import LikeCount from './components/LikeCount.js';
 import Intro from './assets/cal-stroke.svg';
+import CloseTrailer from './components/CloseTrailer.js';
 
 import Logo from './assets/cal-logo.svg';
 import Search from './assets/search.svg';
@@ -124,6 +125,7 @@ class App extends Component {
                     <span className="material-icons">replay</span>
                   </NavLink>
                 </li>
+                <CloseTrailer />
               </ul>
             </nav>
             <div className="movie-options">

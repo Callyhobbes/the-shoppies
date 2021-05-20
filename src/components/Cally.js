@@ -43,7 +43,6 @@ class Cally extends Component {
   }
 
   render() {
-    console.log(this.state.cally);
     return (
       <Fragment>
         <h3>Cally's Picks</h3>

@@ -19,3 +19,9 @@ export const deleteItem = (index) => {
   }
   }
 };
+
+export const toggleModal = (index) => {
+  return {
+    type: 'MODAL'
+  }
+};

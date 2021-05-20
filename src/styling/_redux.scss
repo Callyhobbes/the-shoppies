@@ -28,9 +28,33 @@
 }
 
 .only-text {
-  grid-template-columns: repeat(1, 1fr);
+  display: flex;
+  justify-content: center;
   span {
     position: relative;
     top: 5px;
   }
+}
+
+.show {
+  display: block;
+  span {
+    color: $red;
+    animation: flash 2s ease-in-out infinite;
+    cursor: pointer;
+  }
+}
+
+@keyframes flash {
+  0% {
+    color: $red;
+  } 50% {
+    color: $white;
+  } 100% {
+    color: $red;
+  }
+}
+
+.hide {
+  display: none;
 }
