@@ -30,7 +30,7 @@ class App extends Component {
   componentDidMount() {
     console.log(sessionStorage);
     if (sessionStorage.getItem('visited') === '1') {
-      window.location = "https://github.com/Callyhobbes/the-shoppies";
+      window.location = "https://callyhobbes.github.io/the-shoppies/";
     }
     sessionStorage.setItem('visited', '1');
     console.log(sessionStorage);
