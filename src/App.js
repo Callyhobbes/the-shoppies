@@ -27,6 +27,15 @@ class App extends Component {
     // this.base = this.state;
   }
 
+  componentDidMount() {
+    console.log(sessionStorage);
+    if (sessionStorage.getItem('visited') === '1') {
+      window.location = "https://github.com/Callyhobbes/the-shoppies";
+    }
+    sessionStorage.setItem('visited', '1');
+    console.log(sessionStorage);
+  }
+
   handleChange = (e) => {
     const search = e.target.value;
     this.setState({
