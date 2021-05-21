@@ -21,11 +21,18 @@ Design a webpage that can search OMDB for movies, and allow the user to save the
 
 ### Tech Used
 
-<strong>Focus</strong>: Mobile First
-<strong>Libraries</strong>: React, Redux 
-<strong>Compilers</strong>: SCSS
-<strong>API</strong>: <a href="https://www.omdbapi.com/">OMDB API</a>
-<strong>Database</strong>: Firebase
+<ul>
+  <li><strong>Focus</strong>: Mobile First</a> and display the results (movies only)</li>
+  <li><strong>Libraries</strong>: React, Redux </li>
+  <li><strong>Compilers</strong>: SCSS</li>
+  <li><strong>API</strong>: <a href="https://www.omdbapi.com/">OMDB API</a></li>
+  <li><strong>Database</strong>: Firebase</li>
+</ul>
+
+
+
+
+
 
 ### Comments
 
