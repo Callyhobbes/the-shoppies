@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/the-shoppies/static/css/main.43b4b4d1.chunk.css",
-    "main.js": "/the-shoppies/static/js/main.b581a8f0.chunk.js",
-    "main.js.map": "/the-shoppies/static/js/main.b581a8f0.chunk.js.map",
+    "main.css": "/the-shoppies/static/css/main.bd8472fe.chunk.css",
+    "main.js": "/the-shoppies/static/js/main.5ae0c8bc.chunk.js",
+    "main.js.map": "/the-shoppies/static/js/main.5ae0c8bc.chunk.js.map",
     "runtime-main.js": "/the-shoppies/static/js/runtime-main.dd295b38.js",
     "runtime-main.js.map": "/the-shoppies/static/js/runtime-main.dd295b38.js.map",
     "static/js/2.06018ee0.chunk.js": "/the-shoppies/static/js/2.06018ee0.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.0bf323c6.chunk.js": "/the-shoppies/static/js/3.0bf323c6.chunk.js",
     "static/js/3.0bf323c6.chunk.js.map": "/the-shoppies/static/js/3.0bf323c6.chunk.js.map",
     "index.html": "/the-shoppies/index.html",
-    "static/css/main.43b4b4d1.chunk.css.map": "/the-shoppies/static/css/main.43b4b4d1.chunk.css.map",
+    "static/css/main.bd8472fe.chunk.css.map": "/the-shoppies/static/css/main.bd8472fe.chunk.css.map",
     "static/js/2.06018ee0.chunk.js.LICENSE.txt": "/the-shoppies/static/js/2.06018ee0.chunk.js.LICENSE.txt",
     "static/media/cal-logo.7961e720.svg": "/the-shoppies/static/media/cal-logo.7961e720.svg",
     "static/media/cal-stroke.a4087cf3.svg": "/the-shoppies/static/media/cal-stroke.a4087cf3.svg",
@@ -21,7 +21,7 @@
   "entrypoints": [
     "static/js/runtime-main.dd295b38.js",
     "static/js/2.06018ee0.chunk.js",
-    "static/css/main.43b4b4d1.chunk.css",
-    "static/js/main.b581a8f0.chunk.js"
+    "static/css/main.bd8472fe.chunk.css",
+    "static/js/main.5ae0c8bc.chunk.js"
   ]
 }
