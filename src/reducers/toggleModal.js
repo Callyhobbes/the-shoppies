@@ -1,7 +1,7 @@
 const toggleModal = (state = false, action) => {
   switch (action.type) {
     case 'MODAL':
-      return !state;
+      return state = action.payload.value;
     default:
       return state;
   }

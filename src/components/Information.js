@@ -25,7 +25,6 @@ class Information extends Component {
 
   pageOutput = (movies, search) => {
     if (movies === undefined) {
-      console.log(search)
       return <Fragment>
           <h3>An error has occured during your search.</h3>
           <img src={Keanu} alt="Keanu Reeves questioning your search" />

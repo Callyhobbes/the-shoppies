@@ -802,10 +802,6 @@ iframe {
   display: none;
 }
 
-.sidebar ul .include-close {
-  margin: 0 10px;
-}
-
 @media (min-width: 600px) {
   .movie-list h3 {
     max-width: none;

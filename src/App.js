@@ -1,4 +1,4 @@
-import { Component, Fragment } from 'react';
+import { Component } from 'react';
 import { BrowserRouter, Route, NavLink, Redirect } from "react-router-dom";
 import Favourite from './components/Favourite.js';
 import Information from './components/Information.js';
@@ -6,13 +6,13 @@ import Cally from './components/Cally.js';
 import MovieDetails from './components/MovieDetails.js';
 import LikeCount from './components/LikeCount.js';
 import Intro from './assets/cal-stroke.svg';
-import CloseTrailer from './components/CloseTrailer.js';
 
 import Logo from './assets/cal-logo.svg';
 import Search from './assets/search.svg';
 import axios from 'axios';
 import './styling/App.scss';
 import { connect } from "react-redux";
+import { toggleModal } from './actions/index.js';
 
 class App extends Component {
 
@@ -22,7 +22,7 @@ class App extends Component {
       opening: true,
       search: '',
       movies: [],
-      redirect: false
+      redirect: false,
     }
     // trying to find out to use this with only three state and not all
     // this.base = this.state;
@@ -69,17 +69,22 @@ class App extends Component {
   }
 
   redirect = () => {
-    this.setState({redirect: false})
+    this.setState({redirect: false});
   }
 
   removeIntro = () => {
     this.setState({opening: !this.state.opening})
   }
 
+  toggleModal = () => {
+    console.log('hello');
+    this.props.toggleModal(false)
+  }
+
   render() {
 
     return (
-      <Fragment>
+      <div onClick={this.toggleModal}>
         {this.state.opening &&
           <div className="opening" onClick={this.removeIntro}>
             <img src={Intro} alt="shoppies logo" />
@@ -109,28 +114,30 @@ class App extends Component {
           <section>
             <nav className="sidebar">
               <ul>
-                <li className={this.props.modal ? 'include-close' : null }>
+                <li className={this.props.modal ? 'hide' : null }>
                   <NavLink to="/the-shoppies">
                     <span className="material-icons-outlined" onClick={this.reset}>info</span>
                   </NavLink>
                 </li>
-                <li className={this.props.modal ? 'include-close' : null }>
+                <li className={this.props.modal ? 'hide' : null }>
                   <NavLink to="/the-shoppies/cally" onClick={this.redirect}>
                     <span className="material-icons-outlined">movie</span>
                   </NavLink>
                 </li>
-                <li className={this.props.modal ? 'include-close' : null }>
+                <li className={this.props.modal ? 'hide' : null }>
                   <NavLink to="/the-shoppies/favourite" onClick={this.redirect}>
                     <span className="material-icons">favorite_border</span>
                     <LikeCount />
                   </NavLink>
                 </li>
-                <li className={this.props.modal ? 'include-close' : null }>
+                <li className={this.props.modal ? 'hide' : 'null' }>
                   <NavLink to="/the-shoppies">
                     <span className="material-icons">replay</span>
                   </NavLink>
                 </li>
-                <CloseTrailer />
+                <li className={this.props.modal ? "show include-close" : "hide"}>
+                  <span className="material-icons-outlined">close</span>
+                </li>
               </ul>
             </nav>
             <div className="movie-options">
@@ -144,7 +151,7 @@ class App extends Component {
           </section>
         </BrowserRouter>
         }
-      </Fragment>
+      </div>
     )
   }
 }
@@ -154,4 +161,4 @@ const mapStateToProps = state => ({
   counter: state.counter.number
 });
 
-export default connect(mapStateToProps, null)(App);
+export default connect(mapStateToProps, { toggleModal })(App);
