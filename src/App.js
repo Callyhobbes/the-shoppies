@@ -115,12 +115,12 @@ class App extends Component {
                   </NavLink>
                 </li>
                 <li className={this.props.modal ? 'include-close' : null }>
-                  <NavLink to="/the-shoppies/cally" activeClassName="selected" onClick={this.redirect}>
+                  <NavLink to="/the-shoppies/cally" onClick={this.redirect}>
                     <span className="material-icons-outlined">movie</span>
                   </NavLink>
                 </li>
                 <li className={this.props.modal ? 'include-close' : null }>
-                  <NavLink to="/the-shoppies/favourite" activeClassName="selected" onClick={this.redirect}>
+                  <NavLink to="/the-shoppies/favourite" onClick={this.redirect}>
                     <span className="material-icons">favorite_border</span>
                     <LikeCount />
                   </NavLink>

@@ -389,10 +389,6 @@ section {
   display: block;
 }
 
-.selected span {
-  color: #b73a1c;
-}
-
 .opening {
   display: -webkit-box;
   display: -ms-flexbox;
