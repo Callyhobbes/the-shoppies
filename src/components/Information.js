@@ -43,12 +43,12 @@ class Information extends Component {
           Welcome to the Shoppies!
         </h3>
         <ul className="instructions">
-        <li>Use the search bar above to find a movie or television series that you like.</li>
+        <li>Use the search bar above to find a movie that you like.</li>
         <li>Click on the poster images to see more information about the selected title.</li>
-          <li>Select the <span className="material-icons-outlined">star_border</span> icon to add up to <strong>5</strong> movies to your favourites page</li>
+        <li>Select the <span className="material-icons-outlined">star_border</span> icon to add up to <strong>5</strong> movies to your favourites page</li>
         <li>Select the <span className="material-icons">play_arrow</span> icon to play the movie trailer.</li>
         <li>Select the <span className="material-icons-outlined">more_horiz</span> icon to learn more about the movie on IMBD.</li>
-        <li>Use the navbar see your favourites <span className="material-icons-outlined">favorite_border</span>, your past search <span className="material-icons">replay</span> or to see Cally's picks <span className="material-icons-outlined">movie</span></li>
+        <li>Use the navbar to see your favourites <span className="material-icons-outlined">favorite_border</span>, your past search <span className="material-icons">replay</span> or to see Cally's picks <span className="material-icons-outlined">movie</span></li>
       </ul >
       </Fragment>
     }
