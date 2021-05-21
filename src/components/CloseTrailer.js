@@ -7,7 +7,7 @@ function CloseTrailer() {
   const modal = useSelector(state => state.modal);
   
   return (
-    <li className={modal ? "show" : "hide"} onClick={() => dispatch(toggleModal())}>
+    <li className={`${modal ? "show include-close" : "hide"}`} onClick={() => dispatch(toggleModal())}>
       <span className="material-icons-outlined">close</span>
     </li>
   )

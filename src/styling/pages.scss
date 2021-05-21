@@ -186,11 +186,6 @@
   max-width: 200px;
 }
 
-
-// .highlight {
-//   position: relative;
-// }
-
 iframe {
   position: fixed;
   z-index: 2000;
@@ -199,30 +194,6 @@ iframe {
   transform: translate(-50%, -50%);
   width: 80vw;
   height: 40vw;
-}
-
-.trailer {
-  position: fixed;
-  left: 50%;
-  top: 80%;
-  transform: translateX(-50%);
-  opacity: .5;
-  z-index: 2000;
-  color: $white;
-  background-color: $red;
-  border: $white 3px solid;
-  border-radius: 50%;
-  margin: 0px auto 10px;
-  width: 75px;
-  height: 75px;
-  transition: .3s ease;
-  span {
-    font-size: 4rem;
-  }
-  &:hover,
-  &:focus {
-    opacity: 1;
-  }
 }
 
 .blurBack {

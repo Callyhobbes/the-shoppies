@@ -672,33 +672,6 @@ iframe {
   height: 40vw;
 }
 
-.trailer {
-  position: fixed;
-  left: 50%;
-  top: 80%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  opacity: .5;
-  z-index: 2000;
-  color: #fff;
-  background-color: #b73a1c;
-  border: #fff 3px solid;
-  border-radius: 50%;
-  margin: 0px auto 10px;
-  width: 75px;
-  height: 75px;
-  -webkit-transition: .3s ease;
-  transition: .3s ease;
-}
-
-.trailer span {
-  font-size: 4rem;
-}
-
-.trailer:hover, .trailer:focus {
-  opacity: 1;
-}
-
 .blurBack {
   -webkit-filter: blur(4px);
           filter: blur(4px);
@@ -789,6 +762,10 @@ iframe {
   display: none;
 }
 
+.sidebar ul .include-close {
+  margin: 0 15px;
+}
+
 @media (min-width: 600px) {
   .movie-list {
     -ms-grid-columns: (1fr)[3];
@@ -873,6 +850,13 @@ iframe {
   .shoppies-list {
     -ms-grid-columns: (1fr)[5];
         grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (max-height: 450px) {
+  iframe {
+    width: 500px;
+    height: 220px;
   }
 }
 /*# sourceMappingURL=App.css.map */

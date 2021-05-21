@@ -12,6 +12,7 @@ import Logo from './assets/cal-logo.svg';
 import Search from './assets/search.svg';
 import axios from 'axios';
 import './styling/App.scss';
+import { connect } from "react-redux";
 
 class App extends Component {
 
@@ -21,7 +22,7 @@ class App extends Component {
       opening: true,
       search: '',
       movies: [],
-      redirect: false,
+      redirect: false
     }
     // trying to find out to use this with only three state and not all
     // this.base = this.state;
@@ -76,6 +77,7 @@ class App extends Component {
   }
 
   render() {
+
     return (
       <Fragment>
         {this.state.opening &&
@@ -104,23 +106,23 @@ class App extends Component {
           <section>
             <nav className="sidebar">
               <ul>
-                <li>
+                <li className={this.props.modal ? 'include-close' : null }>
                   <NavLink to="/the-shoppies">
                     <span className="material-icons-outlined" onClick={this.reset}>info</span>
                   </NavLink>
                 </li>
-                <li>
+                <li className={this.props.modal ? 'include-close' : null }>
                   <NavLink to="/the-shoppies/cally" activeClassName="selected" onClick={this.redirect}>
                     <span className="material-icons-outlined">movie</span>
                   </NavLink>
                 </li>
-                <li>
+                <li className={this.props.modal ? 'include-close' : null }>
                   <NavLink to="/the-shoppies/favourite" activeClassName="selected" onClick={this.redirect}>
                     <span className="material-icons">favorite_border</span>
                     <LikeCount />
                   </NavLink>
                 </li>
-                <li>
+                <li className={this.props.modal ? 'include-close' : null }>
                   <NavLink to="/the-shoppies">
                     <span className="material-icons">replay</span>
                   </NavLink>
@@ -144,4 +146,8 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => ({
+  modal: state.modal
+});
+
+export default connect(mapStateToProps, null)(App);
