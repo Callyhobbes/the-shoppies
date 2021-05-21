@@ -19,9 +19,6 @@ function Details() {
     })
   });
 
-  console.log(movie);
-
-
   return (
     <div className="movie-content">
       <h3>{Title}</h3>

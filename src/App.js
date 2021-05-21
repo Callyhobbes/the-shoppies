@@ -103,6 +103,9 @@ class App extends Component {
               </button>
             </form>
           </header>
+          <aside className={this.props.counter === 5 ? "show" : "hide"}>
+            <h4>You have nominated all your shoppies</h4>
+          </aside>
           <section>
             <nav className="sidebar">
               <ul>
@@ -147,7 +150,8 @@ class App extends Component {
 }
 
 const mapStateToProps = state => ({
-  modal: state.modal
+  modal: state.modal,
+  counter: state.counter.number
 });
 
 export default connect(mapStateToProps, null)(App);

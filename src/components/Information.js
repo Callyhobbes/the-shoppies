@@ -13,11 +13,23 @@ class Information extends Component {
     }
   }
 
+  errorMessage = (e) => {
+    if (e.length <= 2) {
+      return <h3>Try using a word longer than 2 letters.</h3>
+    } else if (e.length >= 16) {
+      return <h3>Try using a word shorter than 16 letters.</h3>
+    } else {
+      return <h3>Maybe '{e}' isn't a movie</h3>
+    }
+  }
+
   pageOutput = (movies, search) => {
     if (movies === undefined) {
+      console.log(search)
       return <Fragment>
-          <h3>An error has occured during your search. Please try searching again.</h3>
+          <h3>An error has occured during your search.</h3>
           <img src={Keanu} alt="Keanu Reeves questioning your search" />
+          { this.errorMessage(search)}
         </Fragment>
     } else if (movies.length > 0) {
       return <Fragment>

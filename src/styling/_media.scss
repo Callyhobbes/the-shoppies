@@ -1,4 +1,7 @@
 @media (min-width: 600px) {
+  .movie-list h3 {
+    max-width: none;
+  }
   .movie-list {
     grid-template-columns: repeat(3, 1fr);
   }

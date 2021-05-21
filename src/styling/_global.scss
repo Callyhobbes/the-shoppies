@@ -32,6 +32,7 @@ h3 {
   @include fontStyling(2rem, 600);
   margin: 15px 0;
   text-align: center;
+  padding: 0 15px;
 }
 
 input[type="text"] {
@@ -85,14 +86,14 @@ section {
   z-index: 50;
   bottom: 0;
   ul {
-    padding: 10px 0;
+    padding: 5px 0;
     width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
     li {
       list-style: none;
-      margin: 0 20px;
+      margin: 0 15px;
     }
   }
   span {
@@ -100,12 +101,30 @@ section {
     font-size: 4rem;
     height: auto;
   }
+  .material-icons,
+  .material-icons-outlined {
+    padding: 5px;
+    background: linear-gradient(to right, $red 50%, $grey 50%);
+    border-radius: 50%;
+    background-size: 200% 100%;
+    background-position: 100%;
+    transition: all .5s ease-out;
+    &:hover,
+    &focus {
+      background-position: left bottom;
+    }
+  }
 }
 
 .movie-options {
-  margin: 60px auto 0px;
-  min-height: calc(100vh - 60px);
+  margin: 70px auto 0px;
+  min-height: calc(100vh - 70px);
   max-width: 100vw;
+  h3 + img {
+    max-width: 80%;
+    margin: 20px auto;
+    display: block;
+  }
 }
 
 // Navlink
@@ -149,5 +168,18 @@ section {
   }
   100% {
     right: -400%;
+  }
+}
+
+aside {
+  width: 100vw;
+  background-color: $red;
+  position: fixed;
+  top: 50px;
+  z-index: 100;
+  h4 {
+    color: white;
+    text-align: center;
+    margin: 5px 0;
   }
 }

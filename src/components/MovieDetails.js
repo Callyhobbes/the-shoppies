@@ -62,9 +62,9 @@ function Details(props) {
         <div className="interactions">
           <Tally info={movie} />
           <button>
-            <span className="material-icons" onClick={handleClick}>play_arrow</span>
+            <span className={`material-icons ${Poster === "N/A" ? "control" : null}`} onClick={Poster === "N/A" ? null : handleClick}>play_arrow</span>
           </button>
-          <a href={`https://www.imdb.com/title/${imdbID}`}>
+          <a href={imdbID === "N/A" ? `https://www.google.com/search?q=${Title}` : `https://www.imdb.com/title/${imdbID}`}>
             <span className="material-icons-outlined">more_horiz</span>
           </a>
         </div>

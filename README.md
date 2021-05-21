@@ -1,70 +1,37 @@
 # The Shoppies
 
-This project is designed as part of Shopify's Web Developer Intern Challenge - Fall 2021
+This project is designed as part of Shopify's Web Developer Intern Challenge - Fall 2021.
 
 ## The Challenge
 
-Design a webpage that can search OMDB for movies, and allow the user to save their favourite films they feel should be up for nomination. When they've selected 5 nominees they should be notified they're finished.
+Design a webpage that can search OMDB for movies, and allow the user to save their favourite films they feel should be up for nomination. When they've selected 5 nominees they should be notified they're finished. The parameters include:
 
-### `npm start`
+<ul>
+  <li>Search <a href="https://www.omdbapi.com/">OMDB API</a> and display the results (movies only)</li>
+  <li>Add a movie from the search results to our nomination list</li>
+  <li>View the list of films already nominated</li>
+  <li>Remove a nominee from the nomination list</li>
+</ul>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Project
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Live Link
 
-### `npm test`
+<a href="https://callyhobbes.github.io/the-shoppies/">Cally's Shoppies</a>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Tech Used
 
-### `npm run build`
+Libraries: React, Redux 
+Compilers: SCSS
+Database: Firebase
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+I wanted to use a mixture of React class and function components to see how they would interact with redux. After using the mixture, I prefer using hooks with redux than with class components, but feeling they are both beneficial. I decided to store my favourite movies in a firebase database that people could see and also add to their list.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Future
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<ul>
+  <li>I'd probably change the App class component to a function to use useEffect for the search results. There is always more time for some styling.</li>
+  <li>Set-up a database for the user's favourites or have tally of all the users submissions</li>
+  <li>There is always more time for some styling.</li>
+</ul>
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

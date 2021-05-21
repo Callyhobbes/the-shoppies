@@ -9,7 +9,7 @@ function Tally(props) {
   return (
     <Fragment>
       <button onClick={() => dispatch(increment(result))}>
-        <span className={`material-icons-outlined ${block.includes(result.Title) ? "control" : ""}`}>star_border</span>
+        <span className={`material-icons ${block.includes(result.Title) ? "control" : null}`}>star</span>
       </button>
     </Fragment>
   )

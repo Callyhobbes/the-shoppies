@@ -36,10 +36,12 @@
   }
 }
 
-.show {
+.sidebar .show {
   display: block;
   span {
-    color: $red;
+    color: $white;
+    background: $grey;
+    background-size: 100%;
     animation: flash 2s ease-in-out infinite;
     cursor: pointer;
   }
@@ -47,11 +49,11 @@
 
 @keyframes flash {
   0% {
-    color: $red;
+    background-color: $grey;
   } 50% {
-    color: $white;
+    background-color: $red;
   } 100% {
-    color: $red;
+    background-color: $grey;
   }
 }
 
@@ -60,5 +62,5 @@
 }
 
 .sidebar ul .include-close {
-  margin: 0 15px;
+  margin: 0 10px;
 }

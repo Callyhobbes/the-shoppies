@@ -18,11 +18,9 @@ const counterReducer = (state = initialState, action) => {
 
         return state;
       } else {
-        console.log("else");
         return state;
       };
     case 'REMOVE':
-      console.log(action.payload.selected.Title);
         state = {
           ...state,
           number: state.number - action.payload.remove,
