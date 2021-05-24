@@ -66,6 +66,13 @@ class App extends Component {
     }).catch((error) => {
       console.log(error);
     })
+
+    const nextURL = 'https://callyhobbes.github.io/the-shoppies/';
+    const nextTitle = 'The Shoppies Search';
+    const nextState = { additionalInformation: 'Updated the URL with JS' };
+
+    window.history.pushState(nextState, nextTitle, nextURL);
+
   }
 
   redirect = () => {
