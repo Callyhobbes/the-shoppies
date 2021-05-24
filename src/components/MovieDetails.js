@@ -32,11 +32,9 @@ function Details(props) {
   
 
   const handleClick = (e) => {
-    console.log(movie.Title);
     e.stopPropagation();
     movieTrailer(`${movie.Title}`)
       .then(urlString => {
-        console.log(urlString);
         if (urlString === null) {
           let rolled = "dQw4w9WgXcQ";
           setTrailer(rolled);

@@ -28,3 +28,12 @@ export const toggleModal = (index) => {
     }
   }
 };
+
+export const toggleRedirect = (index) => {
+  return {
+    type: 'REDIRECT',
+    payload: {
+      value: index
+    }
+  }
+};

@@ -1,6 +1,8 @@
 import { Component } from 'react';
 import { Link } from "react-router-dom";
 import noPoster from '../assets/no-poster.png';
+import { connect } from "react-redux";
+import { toggleRedirect } from '../actions/index.js';
 
 class Movie extends Component {
   constructor() {
@@ -16,10 +18,15 @@ class Movie extends Component {
     });
   }
 
+  redirect = () => {
+    this.props.toggleRedirect(false)
+  }
+
   render() { 
     const { title, poster, IMDB } = this.props;
+
     return (
-      <li>
+      <li onClick={this.redirect}>
         <Link to={{
           pathname: `/the-shoppies/movie/${IMDB}`,
           state: { ID: `${IMDB}` }
@@ -31,4 +38,8 @@ class Movie extends Component {
   }
 }
 
-export default Movie;
+const mapStateToProps = state => ({
+  redirect: state.redirect
+});
+
+export default connect(mapStateToProps, { toggleRedirect })(Movie);

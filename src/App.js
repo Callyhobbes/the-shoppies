@@ -12,7 +12,7 @@ import Search from './assets/search.svg';
 import axios from 'axios';
 import './styling/App.scss';
 import { connect } from "react-redux";
-import { toggleModal } from './actions/index.js';
+import { toggleModal, toggleRedirect } from './actions/index.js';
 
 class App extends Component {
 
@@ -39,8 +39,8 @@ class App extends Component {
     this.setState({
       search: '',
       movies: [],
-      redirect: false
-    })
+    });
+    this.props.toggleRedirect(false)
   }
 
   handleSubmit = (e) => {
@@ -58,8 +58,9 @@ class App extends Component {
     }).then((movies) => {
       this.setState({
         movies: movies.data.Search,
-        redirect: true
+        // redirect: true
       });
+      this.props.toggleRedirect(true)
       const text = document.getElementById('movie');
       // remove the text input and not just setting state to ""
       text.value = "";
@@ -67,16 +68,10 @@ class App extends Component {
       console.log(error);
     })
 
-    const nextURL = 'https://callyhobbes.github.io/the-shoppies/';
-    const nextTitle = 'The Shoppies Search';
-    const nextState = { additionalInformation: 'Updated the URL with JS' };
-
-    window.history.pushState(nextState, nextTitle, nextURL);
-
   }
 
   redirect = () => {
-    this.setState({redirect: false});
+    this.props.toggleRedirect(false)
   }
 
   removeIntro = () => {
@@ -84,13 +79,12 @@ class App extends Component {
   }
 
   toggleModal = () => {
-    console.log('hello');
     this.props.toggleModal(false)
   }
 
   render() {
-
     return (
+      
       <div onClick={this.toggleModal}>
         {this.state.opening &&
           <div className="opening" onClick={this.removeIntro}>
@@ -151,9 +145,9 @@ class App extends Component {
               <Route exact
                 path="/the-shoppies"
                 render={() => <Information movies={this.state.movies} search={this.state.search} />} />
-              <Route path="/the-shoppies/movie/:movieID" component={MovieDetails} />
-              {this.state.redirect === true ? <Redirect to="/the-shoppies" /> : <Route path="/the-shoppies/cally" component={Cally} />}
-              {this.state.redirect === true ? <Redirect to="/the-shoppies" /> : <Route path="/the-shoppies/favourite" component={Favourite} />}
+              {this.props.redirect === true ? <Redirect to="/the-shoppies" /> : <Route path="/the-shoppies/movie/:movieID" component={MovieDetails} /> }
+              {this.props.redirect === true ? <Redirect to="/the-shoppies" /> : <Route path="/the-shoppies/cally" component={Cally} />}
+              {this.props.redirect === true ? <Redirect to="/the-shoppies" /> : <Route path="/the-shoppies/favourite" component={Favourite} />}
             </div>
           </section>
         </BrowserRouter>
@@ -165,7 +159,8 @@ class App extends Component {
 
 const mapStateToProps = state => ({
   modal: state.modal,
-  counter: state.counter.number
+  counter: state.counter.number,
+  redirect: state.redirect
 });
 
-export default connect(mapStateToProps, { toggleModal })(App);
+export default connect(mapStateToProps, { toggleModal, toggleRedirect })(App);
