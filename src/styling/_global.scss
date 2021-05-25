@@ -138,10 +138,15 @@ section {
   position: relative;
   flex-direction: column;
   cursor: pointer;
+  animation: colorChange 3s linear forwards;
   img {
     width: 60%;
     padding: 20px;
     max-width: 450px;
+    animation: fade 3s linear forwards;
+  }
+  h2 {
+    animation: fade 3s linear forwards;
   }
   &::before {
     content: '';
@@ -163,6 +168,28 @@ section {
     right: -400%;
   }
 }
+
+@keyframes fade {
+  66% {
+    opacity: 1;
+  }
+  100% {
+    // opacity: .2;
+    opacity: 0;
+  }
+}
+
+@keyframes colorChange {
+  66% {
+    background-color: $red;
+  }
+  100% {
+    // opacity: .2;
+    background-color: $black;
+  }
+}
+
+fade
 
 aside {
   width: 100vw;

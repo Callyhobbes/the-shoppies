@@ -41,10 +41,7 @@ function Details(props) {
           dispatch(toggleModal(true))
         } else {
           let url = new URL(urlString);
-          // if (url === null) {
-          //   return url = "v=dQw4w9WgXcQ"
-          // };
-          // cut after "v=" thus at point 3 
+          
           let searchString = url.search.slice(3);
           setTrailer(searchString);
           dispatch(toggleModal(true))

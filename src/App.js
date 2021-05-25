@@ -22,10 +22,19 @@ class App extends Component {
       opening: true,
       search: '',
       movies: [],
-      redirect: false,
     }
-    // trying to find out to use this with only three state and not all
-    // this.base = this.state;
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        opening: false
+      })
+    }, 3000);
+  }
+
+  componentWillUnmount() {
+    clearTimeout()
   }
 
   handleChange = (e) => {
@@ -58,7 +67,6 @@ class App extends Component {
     }).then((movies) => {
       this.setState({
         movies: movies.data.Search,
-        // redirect: true
       });
       this.props.toggleRedirect(true)
       const text = document.getElementById('movie');
@@ -74,20 +82,19 @@ class App extends Component {
     this.props.toggleRedirect(false)
   }
 
-  removeIntro = () => {
-    this.setState({opening: !this.state.opening})
-  }
-
   toggleModal = () => {
     this.props.toggleModal(false)
   }
+
+
+  
 
   render() {
     return (
       
       <div onClick={this.toggleModal}>
         {this.state.opening &&
-          <div className="opening" onClick={this.removeIntro}>
+          <div className="opening">
             <img src={Intro} alt="shoppies logo" />
             <h2>The Shoppies</h2>
           </div>

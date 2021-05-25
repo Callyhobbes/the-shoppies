@@ -409,12 +409,21 @@ section {
       -ms-flex-direction: column;
           flex-direction: column;
   cursor: pointer;
+  -webkit-animation: colorChange 3s linear forwards;
+          animation: colorChange 3s linear forwards;
 }
 
 .opening img {
   width: 60%;
   padding: 20px;
   max-width: 450px;
+  -webkit-animation: fade 3s linear forwards;
+          animation: fade 3s linear forwards;
+}
+
+.opening h2 {
+  -webkit-animation: fade 3s linear forwards;
+          animation: fade 3s linear forwards;
 }
 
 .opening::before {
@@ -448,6 +457,43 @@ section {
   }
 }
 
+@-webkit-keyframes fade {
+  66% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fade {
+  66% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes colorChange {
+  66% {
+    background-color: #b73a1c;
+  }
+  100% {
+    background-color: #1a1a1a;
+  }
+}
+
+@keyframes colorChange {
+  66% {
+    background-color: #b73a1c;
+  }
+  100% {
+    background-color: #1a1a1a;
+  }
+}
+
+fade
 aside {
   width: 100vw;
   background-color: #b73a1c;
@@ -456,6 +502,7 @@ aside {
   z-index: 100;
 }
 
+fade
 aside h4 {
   color: white;
   text-align: center;
