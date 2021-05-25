@@ -493,7 +493,6 @@ section {
   }
 }
 
-fade
 aside {
   width: 100vw;
   background-color: #b73a1c;
@@ -502,7 +501,6 @@ aside {
   z-index: 100;
 }
 
-fade
 aside h4 {
   color: white;
   text-align: center;
