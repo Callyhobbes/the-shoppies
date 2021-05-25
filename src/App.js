@@ -40,7 +40,7 @@ class App extends Component {
   handleChange = (e) => {
     const search = e.target.value;
     this.setState({
-      search: search,
+      search: search.trim(),
     })
   }
 
