@@ -47,7 +47,7 @@ Happy Shoppies!
 ### Future
 
 <ul>
-  <li>I'd probably change the App class component to a function to use useEffect for the search results. There is always more time for some styling.</li>
+  <li>I'd probably change the App class component to a function to use useEffect for the search results.</li>
   <li>Set-up a database for the user's favourites or have tally of all the users submissions.</li>
   <li>There is always more time for some styling.</li>
 </ul>
