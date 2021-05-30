@@ -25,6 +25,7 @@ class App extends Component {
     }
   }
 
+  // Set intro fade
   componentDidMount() {
     setTimeout(() => {
       this.setState({
@@ -33,6 +34,7 @@ class App extends Component {
     }, 3000);
   }
 
+  // clear intro
   componentWillUnmount() {
     clearTimeout()
   }
@@ -85,9 +87,6 @@ class App extends Component {
   toggleModal = () => {
     this.props.toggleModal(false)
   }
-
-
-  
 
   render() {
     return (
