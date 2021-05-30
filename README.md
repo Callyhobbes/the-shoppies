@@ -43,7 +43,7 @@ The application was designed in Figma as a mobile-first experience. I created a 
 ### Walkthrough
 
 <div align="center">
-<img src="./readme-assets/walthrough.gif"/>
+<img src="./readme-assets/walkthrough.gif"/>
 </div>
 <br>
 
