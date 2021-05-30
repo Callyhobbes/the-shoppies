@@ -58,18 +58,18 @@ The application was designed in Figma as a mobile-first experience. I created a 
 
 ### Comments
 
-I had a ton of fun building this application. I wanted to use a mixture of React class and function components to see how they would interact with redux. After using the mixture, I prefer using hooks with redux than with class components, but feeling they are both beneficial. I decided to store my favourite movies in a firebase database that people could see and also add to their list.
+I had a ton of fun building this application. I wanted to use a mixture of React class and function components to see how they would interact with redux. After using a mixture of both, I would have to say I prefer using hooks with redux than with class components. However, I do feel they are both beneficial. I decided to store my favourite movies in a firebase database that people could see and also add to their list.
 
-I've named the nominations as favourites, because while their are nominations, it is more of a collection of our favourite movies.
+I decided to name the nominations as "favourites", because while they are nominations, it is more of a collection of our favourite movies. 
 
-I'm pretty happy with the error handling in the project. Took awhile but glad that it catches most issues.
+I'm pretty happy with the error handling in the project. It took awhile but glad that it catches most issues.
 
 Happy Shoppies!
 
 ### Future
 
 <ul>
-  <li>I'd probably change the App class component to a function to use useEffect for the search results. There is always more time for some styling.</li>
+  <li>I'd probably change the App class component to a function to use useEffect for the search results.</li>
   <li>Set-up a database for the user's favourites or have tally of all the users submissions.</li>
   <li>There is always more time for some styling.</li>
 </ul>
